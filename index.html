@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Thumbelina Content Slider</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <!-- Include jQuery. -->
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+
+        <!-- Include Thumbelina CSS. -->
+        <link rel="stylesheet" type="text/css" href="thumbelina.css" />
+
+        <!-- Include Thumbelina script. -->
+        <script type="text/javascript" src="thumbelina.js"></script>
+
+        <!-- Create sliders. -->
+        <script type="text/javascript">
+            $(function(){
+                
+                $('#slider1').Thumbelina({
+                    $bwdBut:$('#slider1 .left'),    // Selector to left button.
+                    $fwdBut:$('#slider1 .right')    // Selector to right button.
+                });
+                
+                $('#slider2').Thumbelina({
+                    $bwdBut:$('#slider2 .left'),    // Selector to left button.
+                    $fwdBut:$('#slider2 .right')    // Selector to right button.
+                });
+                
+                $('#slider3').Thumbelina({
+                    orientation:'vertical',         // Use vertical mode (default horizontal).
+                    $bwdBut:$('#slider3 .top'),     // Selector to top button.
+                    $fwdBut:$('#slider3 .bottom')   // Selector to bottom button.
+                });
+              
+            })
+        </script>    
+
+        <style type="text/css">
+            /* Some styles for the containers */
+            #slider1 {
+                position:relative;  /* Containers need relative or absolute position. */
+                margin-left:20px;
+                width:256px;
+                height:120px;
+                border-top:1px solid #aaa;
+                border-bottom:1px solid #aaa;
+            }
+
+            #slider2 {
+                position:relative;
+                margin-left:20px;
+                width:75%;
+                height:120px;
+                border-top:1px solid #aaa;
+                border-bottom:1px solid #aaa;
+            }
+
+            #slider3 {
+                position:relative;
+                margin-top:40px;
+                width:93px;
+                height:256px;
+                border-left:1px solid #aaa;
+                border-right:1px solid #aaa;
+                margin-bottom:40px;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <h1>Thumbelina Content Slider</h1>
+        <hr/>
+        
+        <h2>Horizontal Slider</h2>
+        <div id="slider1">
+            <div class="thumbelina-but horiz left">&#706;</div>
+            <ul>
+                <li><img src="images/image1.jpg"></li>
+                <li><img src="images/image2.jpg"></li>
+                <li><img src="images/image3.jpg"></li>
+                <li><img src="images/image4.jpg"></li>
+                <li><img src="images/image5.jpg"></li>
+                <li><img src="images/image6.jpg"></li>
+            </ul>
+            <div class="thumbelina-but horiz right">&#707;</div>
+        </div>
+
+
+        <h2>Fluid Width Slider</h2>
+        <div id="slider2">
+            <div class="thumbelina-but horiz left">&#706;</div>
+            <ul>
+                <li><img src="images/image1.jpg"></li>
+                <li><img src="images/image2.jpg"></li>
+                <li><img src="images/image3.jpg"></li>
+                <li><img src="images/image4.jpg"></li>
+                <li><img src="images/image5.jpg"></li>
+                <li><img src="images/image6.jpg"></li>
+            </ul>
+            <div class="thumbelina-but horiz right">&#707;</div>
+        </div>
+
+        <h2>Vertical Slider</h2>
+        <div  id="slider3">
+            <div class="thumbelina-but vert top">&#708;</div>
+            <ul>
+                <li><img src="images/image1.jpg"></li>
+                <li><img src="images/image2.jpg"></li>
+                <li><img src="images/image3.jpg"></li>
+                <li><img src="images/image4.jpg"></li>
+                <li><img src="images/image5.jpg"></li>
+                <li><img src="images/image6.jpg"></li>
+            </ul>
+            <div class="thumbelina-but vert bottom">&#709;</div>
+        </div>
+        
+        <hr/>
+        <a href="http://www.starplugins.com">Developed by Star Plugins, &COPY;2013</a>
+
+    </body>
+
+</html>
