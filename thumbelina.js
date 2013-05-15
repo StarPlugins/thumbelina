@@ -22,7 +22,7 @@
             listDimension = 0,      // Size (width or height depending on orientation) of list element.
             idle = 0,
             outerFunc,
-            orientData              // Stores function calls and CSS attribute for horiz or vert mode.
+            orientData;              // Stores function calls and CSS attribute for horiz or vert mode.
         
         // Add thumblina CSS class, and create an inner wrapping container, within which the list will slide with overflow hidden.
         $list.addClass('thumbelina').wrap('<div style="position:absolute;overflow:hidden;width:100%;height:100%;">');
@@ -30,7 +30,7 @@
         settings = $.extend({}, $.fn.Thumbelina.defaults, settings);
         
         // Depending on vertical or horizontal, get functions to call and CSS attribute to change.
-        if(settings.orientation == 'vertical') 
+        if(settings.orientation === 'vertical') 
             orientData = {outerSizeFunc:  'outerHeight', cssAttr: 'top', display: 'block'};
         else
             orientData = {outerSizeFunc:  'outerWidth', cssAttr: 'left', display: 'inline-block'};
@@ -41,7 +41,7 @@
         // Function to bind events to buttons.
         var bindButEvents = function($elem,dir) {
             $elem.bind('mousedown mouseup touchend touchstart',function(evt) {
-                if (evt.type=='mouseup' || evt.type=='touchend') moveDir = 0;
+                if (evt.type==='mouseup' || evt.type==='touchend') moveDir = 0;
                 else moveDir = dir;
                 return false;
             });
@@ -60,7 +60,7 @@
             var minPos;
             
             // If no movement or resize for 100 cycles, then go into 'idle' mode to save CPU.
-            if (!moveDir && pos == destPos && listDimension == $container[outerFunc]() ) {  
+            if (!moveDir && pos === destPos && listDimension === $container[outerFunc]() ) {  
                 idle++;
                 if (idle>100) return;
             }else {
@@ -85,9 +85,9 @@
             if (destPos>0) destPos = 0;
             
             // Disable/enable buttons depending min/max extents.
-            if (destPos == minPos) settings.$fwdBut.addClass('disabled');
+            if (destPos === minPos) settings.$fwdBut.addClass('disabled');
             else settings.$fwdBut.removeClass('disabled');
-            if (destPos == 0) settings.$bwdBut.addClass('disabled');
+            if (destPos === 0) settings.$bwdBut.addClass('disabled');
             else settings.$bwdBut.removeClass('disabled');
             
             // Animate towards destination with a simple easing calculation.
@@ -98,12 +98,12 @@
             if (Math.abs(destPos-pos)<0.001) pos = destPos;
             
             $list.css(orientData.cssAttr, Math.floor(pos));
-        }
+        };
         
         setInterval(function(){
             animate();
         },1000/60);
-    }
+    };
     
     $.fn.Thumbelina.defaults = {
         orientation:    "horizontal",   // Orientation mode, horizontal or vertical.
@@ -111,7 +111,7 @@
         maxSpeed:       5,              // Max speed of movement (pixels per cycle).
         $bwdBut:   null,                // jQuery element used as backward button.
         $fwdBut:    null                // jQuery element used as forward button.
-    }
+    };
     
 })(jQuery);
 
